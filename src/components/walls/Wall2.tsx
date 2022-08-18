@@ -1,14 +1,14 @@
 import React from "react";
 import { Grid, TextField, Box } from "@material-ui/core";
-import "./Walls.css";
+import "./Wall.css";
 import DoorsWindows from "../doorsWindows/DoorsWindows";
 
-function Walls1() {
+function Walls2() {
     return(
         <>
             <Grid>
                         <Box>
-                            <h2>1º Parede</h2>
+                            <h2>2º Parede</h2>
                             <TextField
                                 id='larura'
                                 label='largura'
@@ -37,4 +37,4 @@ function Walls1() {
     );
 }
 
-export default Walls1;
+export default Walls2;
