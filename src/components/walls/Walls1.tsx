@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid, TextField, Box } from "@material-ui/core";
 import "./Walls.css";
+import DoorsWindows from "../doorsWindows/DoorsWindows";
 
 function Walls1() {
     return(
@@ -26,7 +27,10 @@ function Walls1() {
                                 style={{ backgroundColor: "#FFEFD5" }}
                                 fullWidth />
 
+                            <DoorsWindows />
+
                         </Box>
+
                     </Grid>
                    
         </>
