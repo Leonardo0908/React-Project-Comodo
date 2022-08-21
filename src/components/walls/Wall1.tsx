@@ -5,6 +5,9 @@ import DoorsWindows from "../doorsWindows/DoorsWindows";
 
 function Walls1( {valor }: any | number) {
 
+    const [value1, setValue1] = useState(0); // Valor área de Portas
+    const [value2, setValue2] = useState(0); // Valor área de Janelas
+
     const [width, setWidth] = useState("");  // Largura
     const [height, setHeight] = useState(""); // Altura
 
@@ -12,8 +15,10 @@ function Walls1( {valor }: any | number) {
 
     function calcular() {
 
-        valor(parseFloat(width.replace(",",".")) *  parseFloat(height.replace(",",".")));
-
+        setWallArea1(parseFloat(width.replace(",",".")) *  parseFloat(height.replace(",",".")))
+        wallArea1 =- ( value1 + value2)
+        valor(wallArea1)
+        
     }
 
     return(
@@ -43,7 +48,7 @@ function Walls1( {valor }: any | number) {
                                 style={{ backgroundColor: "#FFEFD5" }}
                                 fullWidth />
 
-                            <DoorsWindows />
+                            <DoorsWindows value1={setValue1} value2={setValue2} />
 
                             <Button onClick={calcular} >
                                 Calcular
