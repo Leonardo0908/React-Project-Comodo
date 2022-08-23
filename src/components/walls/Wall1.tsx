@@ -3,7 +3,7 @@ import { Grid, TextField, Box, Button } from "@material-ui/core";
 import "./Wall.css";
 import DoorsWindows from "../doorsWindows/DoorsWindows";
 
-function Walls1( {valor }: any | number) {
+function Walls1( {value, calculate }: any | number) {
 
     const [value1, setValue1] = useState(0); // Valor área de Portas
     const [value2, setValue2] = useState(0); // Valor área de Janelas
@@ -13,12 +13,22 @@ function Walls1( {valor }: any | number) {
 
     let [wallArea1, setWallArea1] = useState(0);
 
-    function calcular() {
+    calculate = () => {
 
-        setWallArea1(parseFloat(width.replace(",",".")) *  parseFloat(height.replace(",",".")))
-        wallArea1 =- ( value1 + value2)
-        valor(wallArea1)
+        wallArea1 = (parseFloat(width.replace(",",".")) *  parseFloat(height.replace(",",".")));
+        wallArea1 -= ( value1 + value2 )
         
+        
+        if( wallArea1 > 50){
+            alert("Parede 1 \n\n Não poder ter mais que 50 Metro quadrado !!!")
+            wallArea1 = 0; 
+            
+        }else if( wallArea1 < 1 ){
+            alert("Parede 1 \n\n Não poder ter menos que 1 Metro quadrado !!!")
+            wallArea1 = 0; 
+        }
+            
+        value(wallArea1)
     }
 
     return(
@@ -50,7 +60,7 @@ function Walls1( {valor }: any | number) {
 
                             <DoorsWindows value1={setValue1} value2={setValue2} />
 
-                            <Button onClick={calcular} >
+                            <Button onClick={calculate} >
                                 Calcular
                             </Button>
 
