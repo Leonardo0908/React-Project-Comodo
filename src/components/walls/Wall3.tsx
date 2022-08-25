@@ -38,6 +38,9 @@ function Walls3({ value, calculate }: any | number) {
                     <h2>3º Parede</h2>
                     <TextField
                         className="textFild"
+                        value={width}
+                        onChange={e => setWidth(e.target.value)}
+                        autoComplete="off"
                         id='larura'
                         label='largura'
                         variant='outlined'
@@ -47,6 +50,9 @@ function Walls3({ value, calculate }: any | number) {
                         fullWidth />
 
                     <TextField
+                        value={height}
+                        onChange={e => setHeight(e.target.value)}
+                        autoComplete="off"
                         id='altura'
                         label='altura'
                         variant='outlined'

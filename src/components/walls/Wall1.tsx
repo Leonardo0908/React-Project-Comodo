@@ -40,6 +40,7 @@ function Walls1( {value, calculate }: any | number) {
                                 className="textFild"
                                 value={width}
                                 onChange={e => setWidth(e.target.value)}
+                                autoComplete="off"
                                 id='larura'
                                 label='largura'
                                 variant='outlined'
@@ -51,6 +52,7 @@ function Walls1( {value, calculate }: any | number) {
                             <TextField
                                 value={height}
                                 onChange={e => setHeight(e.target.value)}
+                                autoComplete="off"
                                 id='altura'
                                 label='altura'
                                 variant='outlined'
