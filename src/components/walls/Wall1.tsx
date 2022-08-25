@@ -37,6 +37,7 @@ function Walls1( {value, calculate }: any | number) {
                         <Box>
                             <h2>1º Parede</h2>
                             <TextField
+                                className="textFild"
                                 value={width}
                                 onChange={e => setWidth(e.target.value)}
                                 id='larura'
@@ -60,7 +61,7 @@ function Walls1( {value, calculate }: any | number) {
 
                             <DoorsWindows value1={setValue1} value2={setValue2} />
 
-                            <Button onClick={calculate} >
+                            <Button onClick={calculate} className="button" >
                                 Calcular
                             </Button>
 

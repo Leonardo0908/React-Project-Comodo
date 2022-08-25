@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Box, Grid, Button } from "@material-ui/core";
-import lata from "../../assets/img/lata.jpg";
 import Walls1 from "../../components/walls/Wall1";
 import Walls2 from "../../components/walls/Wall2";
 import Walls3 from "../../components/walls/Wall3";
 import Walls4 from "../../components/walls/Wall4";
 import "./Application.css";
 
-
 function Application() {
 
     const [wallArea1, setWallArea1] = useState(0); // Área Parede
     const [wallArea2, setWallArea2] = useState(0);
-    const [wallArea3, setWallArea3] = useState(0);
+    const[wallArea3, setWallArea3] = useState(0);
     const [wallArea4, setWallArea4] = useState(0);
 
     const [tinGG, setTinGG] = useState(0); // Latas de tintas 18 L
@@ -37,19 +35,19 @@ function Application() {
 
     return (
         <>
-            <Grid container direction="row" xs={12}   >
-
-                <Grid item xs={4} >
+            <Grid container direction="row" xs={12} className="grid1" >
+            
+                <Grid item xs={4} className='grid2' >
                     <Box >
                         <Walls1 value={setWallArea1} Calcular={Calculate} />
                     </Box>
                 </Grid>
-                <Grid item xs={4} >
+                <Grid item xs={4} className='grid2' >
                     <Box>
                         <Walls2 value={setWallArea2} Calcular={Calculate} />
                     </Box>
                 </Grid>
-                <Grid item xs={2} >
+                <Grid item xs={4} className='grid3' >
                     <Box>
                         <h1>1º Resultado</h1>
                         <h2> Área Parede 1 = {wallArea1.toFixed(2)}</h2>
@@ -60,7 +58,7 @@ function Application() {
 
                         <h2> Área Parede 4 = {wallArea4.toFixed(2)}</h2>
 
-                        <Button className="button" onClick={Calculate} >
+                        <Button onClick={Calculate}  className="button" >
                             Calcular
                         </Button>
 
@@ -68,24 +66,24 @@ function Application() {
                     </Box>
                 </Grid>
 
-                <Grid item xs={4} >
+                <Grid item xs={4} className='grid2' >
                     <Box >
                         <Walls3 value={setWallArea3} Calcular={Calculate} />
                     </Box>
                 </Grid>
-                <Grid item xs={4} >
+                <Grid item xs={4} className='grid2' >
                     <Box>
                         <Walls4 value={setWallArea4} Calcular={Calculate} />
                     </Box>
                 </Grid>
-                <Grid item xs={2} >
+                <Grid item xs={4} className='grid3' >
                 <Box>
                         <h1>3º Resultado</h1>
                         
-                        <h2> <img src={lata} alt="Lata" width="70px"  /> Lata 18L = {tinGG.toFixed(0) }</h2>
-                        <h2> <img src={lata} alt="Lata" width="70px"  /> Lata 3,6L = {tinG.toFixed(0) }</h2>
-                        <h2> <img src={lata} alt="Lata" width="70px"  /> Lata 2,5L = {tinM.toFixed(0) }</h2>
-                        <h2> <img src={lata} alt="Lata" width="70px"  /> Lata 0,5L = {tinP.toFixed(0) }</h2>
+                        <h2> {/* <img src={lata} alt="Lata" width="70px"  /> */} Lata 18L = {tinGG.toFixed(0) }</h2>
+                        <h2> Lata 3,6L = {tinG.toFixed(0) }</h2>
+                        <h2>  Lata 2,5L = {tinM.toFixed(0) }</h2>
+                        <h2>  Lata 0,5L = {tinP.toFixed(0) }</h2>
 
                     </Box>
                 </Grid>

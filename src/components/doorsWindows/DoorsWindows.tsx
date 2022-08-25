@@ -46,25 +46,25 @@ function DoorsWindows({ value1, value2 }: any | number ) {
 
     return (
         <>
-            <Grid container direction="row" >
+            <Grid container direction="row" className="part1" >
 
-                <h4>Doors</h4>
+                <h4>Porta</h4>
 
-                <Button onClick={LessDoor} >
+                <Button onClick={LessDoor} className="but" >
                     <RemoveIcon />
                 </Button>
                 <h1>{doors}</h1>
-                <Button onClick={MoreDoor} >
+                <Button onClick={MoreDoor} className="but" >
                     <AddIcon />
                 </Button>
 
-                <h4>Windows</h4>
+                <h4>Janela</h4>
 
-                <Button onClick={LessWindow} >
+                <Button onClick={LessWindow} className="but" >
                     <RemoveIcon />
                 </Button>
                     <h1>{windows}</h1>
-                <Button onClick={MoreWindow} >
+                <Button onClick={MoreWindow} className="but" >
                     <AddIcon />
                 </Button>
 
