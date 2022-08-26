@@ -1,0 +1,29 @@
+.fundoHome {
+
+    min-height: 100vh;
+    /* text-align: center ; */
+    justify-content: center !important;
+    background-color: rgb(90, 83, 97);
+    color: rgb(98, 181, 186);
+}
+
+.box1 {
+    color: rgb(223, 215, 215);
+    text-align: center;
+}
+
+.ul1 {
+    font-size: 25px;
+}
+
+.p1 {
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.box2 {
+    text-align: center;
+    color: rgb(43, 223, 226);
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

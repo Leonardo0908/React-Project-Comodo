@@ -9,20 +9,19 @@ function Navbar() {
       <AppBar position="static" className='Nav1' >
         <Toolbar variant="dense">
 
-        <Link to="/home" className="cursor">
-          <Box mx={1} >
-            <Typography variant="h6" color="inherit">
-              Home
-            </Typography>
-          </Box>
+          <Link to="/home" className="cursor">
+            <Box mx={1} >
+              <Typography variant="h6" color="inherit">
+                Home
+              </Typography>
+            </Box>
           </Link>
-
           <Link to="/application" className="cursor">
-          <Box mx={1} >
-            <Typography variant="h6" color="inherit">
-              Application
-            </Typography>
-          </Box>
+            <Box mx={1} >
+              <Typography variant="h6" color="inherit">
+                Application
+              </Typography>
+            </Box>
           </Link>
 
         </Toolbar>

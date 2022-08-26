@@ -15,19 +15,33 @@ function Walls4({ value, calculate }: any | number) {
 
     calculate = () => {
 
-        wallArea4 = (parseFloat(width.replace(",", ".")) * parseFloat(height.replace(",", ".")));
-        wallArea4 -= (value1 + value2)
-
-
-        if (wallArea4 > 50) {
-            alert("Parede 1 \n\n Não poder ter mais que 50 Metro quadrado !!!")
+        wallArea4 = (parseFloat(width.replace(",",".")) *  parseFloat(height.replace(",",".")));
+        wallArea4 -= ( value1 + value2 )
+        
+        if( value1 !== 0 && parseFloat(height)  < 2.20 ){
+            alert(" Parede 4 \n\n Com porta ter que ter uma altura minima de 2,20 !!!")
+            wallArea4 = 0;
+            
+        }else if(value1 !== 0 && value2 !== 0 && wallArea4 / 2 < value1 + value2){
+            alert(" Parede 4 \n\n Porta e Janela deve ser no maximo 50% da area da Parede !!!")
+            wallArea4 = 0;
+            
+        }else if(value1 === 0 && value2 !== 0 && wallArea4 / 2 < value2){
+            alert(" Parede 4 \n\n Panela deve ser no maximo 50% da area da Parede !!!")
+            wallArea4 = 0;
+            
+        }else if( value2 === 0 && value1 !== 0 && wallArea4 / 2 < value1){
+            alert(" Parede 4 \n\n Porta deve ser no maximo 50% da area da Parede !!!");
+            wallArea4 = 0;
+         
+        }else if( wallArea4 > 50){
+            alert("Parede 4 \n\n Não poder ter mais que 50 Metro quadrado !!!")
             wallArea4 = 0;
 
-        } else if (wallArea4 < 1) {
-            alert("Parede 1 \n\n Não poder ter menos que 1 Metro quadrado !!!")
-            wallArea4 = 0;
+        }else if( wallArea4 < 1 ){
+            alert(" Parede 4 \n\n Não poder ter menos que 1 Metro quadrado !!!")
+            wallArea4 = 0; 
         }
-
         value(wallArea4)
     }
 

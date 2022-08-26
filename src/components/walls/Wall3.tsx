@@ -14,20 +14,34 @@ function Walls3({ value, calculate }: any | number) {
     let [wallArea3, setWallArea3] = useState(0);
 
     calculate = () => {
-
-        wallArea3 = (parseFloat(width.replace(",", ".")) * parseFloat(height.replace(",", ".")));
-        wallArea3 -= (value1 + value2)
-
-
-        if (wallArea3 > 50) {
-            alert("Parede 1 \n\n Não poder ter mais que 50 Metro quadrado !!!")
+        
+        wallArea3 = (parseFloat(width.replace(",",".")) *  parseFloat(height.replace(",",".")));
+        wallArea3 -= ( value1 + value2 )
+        
+        if( value1 !== 0 && parseFloat(height)  < 2.20 ){
+            alert(" Parede 3 \n\n Com porta ter que ter uma altura minima de 2,20 !!!")
+            wallArea3 = 0;
+            
+        }else if(value1 !== 0 && value2 !== 0 && wallArea3 / 2 < value1 + value2){
+            alert(" Parede 3 \n\n Porta e Janela deve ser no maximo 50% da area da Parede !!!")
+            wallArea3 = 0;
+            
+        }else if(value1 === 0 && value2 !== 0 && wallArea3 / 2 < value2){
+            alert(" Parede 3 \n\n Janela deve ser no maximo 50% da area da Parede !!!")
+            wallArea3 = 0;
+            
+        }else if( value2 === 0 && value1 !== 0 && wallArea3 / 2 < value1){
+            alert(" Parede 3 \n\n Porta deve ser no maximo 50% da area da Parede !!!");
+            wallArea3 = 0;
+        
+        }else if( wallArea3 > 50){
+            alert("Parede 3 \n\n Não poder ter mais que 50 Metro quadrado !!!")
             wallArea3 = 0;
 
-        } else if (wallArea3 < 1) {
-            alert("Parede 1 \n\n Não poder ter menos que 1 Metro quadrado !!!")
-            wallArea3 = 0;
+        }else if( wallArea3 < 1 ){
+            alert(" Parede 3 \n\n Não poder ter menos que 1 Metro quadrado !!!")
+            wallArea3 = 0; 
         }
-
         value(wallArea3)
     }
 

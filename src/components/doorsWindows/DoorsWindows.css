@@ -3,6 +3,12 @@
     justify-content: center !important;
 }
 
+.porjan2 {
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: -20px ;
+}
+
 .but {
     border-radius: 30px !important;
     color: rgb(239, 239, 239) !important;
