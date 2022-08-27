@@ -15,43 +15,42 @@ function Walls4({ value, calculate }: any | number) {
 
     calculate = () => {
 
-        wallArea4 = (parseFloat(width.replace(",",".")) *  parseFloat(height.replace(",",".")));
-        wallArea4 -= ( value1 + value2 )
-        
-        if( value1 !== 0 && parseFloat(height)  < 2.20 ){
+        wallArea4 = (parseFloat(width.replace(",", ".")) * parseFloat(height.replace(",", ".")));
+        wallArea4 -= (value1 + value2)
+
+        if (value1 !== 0 && parseFloat(height) < 2.20) {
             alert(" Parede 4 \n\n Com porta ter que ter uma altura minima de 2,20 !!!")
             wallArea4 = 0;
-            
-        }else if(value1 !== 0 && value2 !== 0 && wallArea4 / 2 < value1 + value2){
+
+        } else if (value1 !== 0 && value2 !== 0 && wallArea4 / 2 < value1 + value2) {
             alert(" Parede 4 \n\n Porta e Janela deve ser no maximo 50% da area da Parede !!!")
             wallArea4 = 0;
-            
-        }else if(value1 === 0 && value2 !== 0 && wallArea4 / 2 < value2){
+
+        } else if (value1 === 0 && value2 !== 0 && wallArea4 / 2 < value2) {
             alert(" Parede 4 \n\n Panela deve ser no maximo 50% da area da Parede !!!")
             wallArea4 = 0;
-            
-        }else if( value2 === 0 && value1 !== 0 && wallArea4 / 2 < value1){
+
+        } else if (value2 === 0 && value1 !== 0 && wallArea4 / 2 < value1) {
             alert(" Parede 4 \n\n Porta deve ser no maximo 50% da area da Parede !!!");
             wallArea4 = 0;
-         
-        }else if( wallArea4 > 50){
+
+        } else if (wallArea4 > 50) {
             alert("Parede 4 \n\n Não poder ter mais que 50 Metro quadrado !!!")
             wallArea4 = 0;
 
-        }else if( wallArea4 < 1 ){
+        } else if (wallArea4 < 1) {
             alert(" Parede 4 \n\n Não poder ter menos que 1 Metro quadrado !!!")
-            wallArea4 = 0; 
+            wallArea4 = 0;
         }
         value(wallArea4)
     }
 
     return (
         <>
-            <Grid>
+            <Grid className="wall2" >
                 <Box>
                     <h2>4º Parede</h2>
                     <TextField
-                        className="textFild"
                         value={width}
                         onChange={e => setWidth(e.target.value)}
                         autoComplete="off"
@@ -75,16 +74,14 @@ function Walls4({ value, calculate }: any | number) {
                         style={{ backgroundColor: "#FFEFD5" }}
                         fullWidth />
 
-                    <DoorsWindows value1={setValue1} value2={setValue2} />
-
-                    <Button onClick={calculate} className="button" >
-                        Calcular
-                    </Button>
-
+                    <Grid container direction="column" className="bot" >
+                        <DoorsWindows value1={setValue1} value2={setValue2} />
+                        <Button onClick={calculate} className="button" >
+                            Calcular Parede 1
+                        </Button>
+                    </Grid>
                 </Box>
-
             </Grid>
-
         </>
     );
 }

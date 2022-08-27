@@ -4,6 +4,7 @@ import Walls1 from "../../components/walls/Wall1";
 import Walls2 from "../../components/walls/Wall2";
 import Walls3 from "../../components/walls/Wall3";
 import Walls4 from "../../components/walls/Wall4";
+import lata from "../../assets/img/lata.jpg";
 import "./Application.css";
 
 function Application() {
@@ -80,10 +81,10 @@ function Application() {
                     <Box>
                         <h1>3º Resultado</h1>
 
-                        <h2> {/* <img src={lata} alt="Lata" width="70px"  /> */} Lata 18L = {tinGG.toFixed(0)}</h2>
-                        <h2> Lata 3,6L = {tinG.toFixed(0)}</h2>
-                        <h2>  Lata 2,5L = {tinM.toFixed(0)}</h2>
-                        <h2>  Lata 0,5L = {tinP.toFixed(0)}</h2>
+                        <h2> <img src={lata} alt="Lata" width="70px"  /> Lata 18L = {tinGG.toFixed(0)}</h2>
+                        <h2> <img src={lata} alt="Lata" width="70px"  /> Lata 3,6L = {tinG.toFixed(0)}</h2>
+                        <h2> <img src={lata} alt="Lata" width="70px"  />  Lata 2,5L = {tinM.toFixed(0)}</h2>
+                        <h2> <img src={lata} alt="Lata" width="70px"  />  Lata 0,5L = {tinP.toFixed(0)}</h2>
 
                     </Box>
                 </Grid>

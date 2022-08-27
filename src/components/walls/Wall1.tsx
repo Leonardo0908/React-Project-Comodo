@@ -47,11 +47,10 @@ function Walls1({ value, calculate }: any | number) {
 
     return (
         <>
-            <Grid>
+            <Grid className="wall" >
                 <Box>
                     <h2>1º Parede</h2>
                     <TextField
-                        className="textFild"
                         value={width}
                         onChange={e => setWidth(e.target.value)}
                         autoComplete="off"
@@ -82,7 +81,6 @@ function Walls1({ value, calculate }: any | number) {
                         </Button>
                     </Grid>
                 </Box>
-
             </Grid>
 
         </>
