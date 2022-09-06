@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+/* import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; */
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Footer from './components/estaticos/footer/Footer';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Application from './pages/application/Application';
@@ -10,7 +11,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <Router>
+      <BrowserRouter>
         <Navbar />
         <div style={{ minHeight: '100vh' }} >
           <Routes>
@@ -24,7 +25,7 @@ function App() {
           </Routes>
         </div>
         <Footer />
-      </Router>
+      </BrowserRouter>
     </>
   );
 }
