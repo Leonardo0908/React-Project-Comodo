@@ -5,6 +5,7 @@ import Navbar from './components/estaticos/navbar/Navbar';
 import Application from './pages/application/Application';
 import Home from './pages/home/Home';
 import './App.css';
+// yarn i  (para baixar importações)
 
 function App() {
   return (
